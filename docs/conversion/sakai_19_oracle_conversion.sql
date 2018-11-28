@@ -25,3 +25,11 @@ BEGIN
    EXECUTE IMMEDIATE 'CREATE SEQUENCE SAM_PUBSECTIONMETADATA_ID_S START WITH '||seq_start||' INCREMENT BY 1 NOMAXVALUE';
 END;
 -- End SAK-40182
+
+-- SAK-41017
+
+UPDATE sakai_site_page set layout = '0' WHERE page_id = '!error-100';
+UPDATE sakai_site_page set layout = '0' WHERE page_id = '!urlError-100';
+commit;
+
+-- end of SAK-41017

@@ -15,3 +15,11 @@ ALTER TABLE MFR_TOPIC_T ADD RESTRICT_PERMS_FOR_GROUPS BIT(1) DEFAULT FALSE;
 CREATE INDEX contentreview_provider_id_idx on CONTENTREVIEW_ITEM (providerId, externalId);
 
 -- End SAK-39967
+
+-- SAK-41017
+
+UPDATE sakai_site_page set layout = '0' WHERE page_id = '!error-100';
+UPDATE sakai_site_page set layout = '0' WHERE page_id = '!urlError-100';
+commit;
+
+-- end of SAK-41017
